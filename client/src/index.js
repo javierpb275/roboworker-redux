@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Provider, connect } from 'react-redux';//They allow us to connect the 2 parts of our app (react with redux)
+import { createStore } from 'redux';//It allows us to create a store (javascript object that describes our app)
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
     <App />
-    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
