@@ -1,4 +1,5 @@
-import { ADD_COINS } from './constants.js';
+import { CHANGE_SEARCH_FIELD } from './constants.js';
+
 
 //This action takes care of searching for the product that the user types in the SearchBox component.
 export const setSearchField = (text) => ({
@@ -6,8 +7,3 @@ export const setSearchField = (text) => ({
     payload: text
 })
 
-//This action takes care of getting coins when the user clicks on the work button.
-export const earnCoins = (coin) => ({
-    type: ADD_COINS,
-    payload: coin
-});
