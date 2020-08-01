@@ -1,0 +1,37 @@
+.custom-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+    
+}
+
+button {
+    background-color: lightgray;
+    width: 8vw;
+    height: 12vh;
+    border-radius: 50%;
+}
+
+
+
+button:active {
+
+    .button-icon {
+        transform: rotate(120deg);
+    }
+
+}
+
+button:focus { 
+    outline-style: none; 
+}
+
+.button-icon {
+    transform: rotate(80deg);
+
+}
+
+.button-title {
+    margin-top: 0%;
+}
+
