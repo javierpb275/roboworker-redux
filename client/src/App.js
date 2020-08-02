@@ -1,5 +1,9 @@
+
+//REACT
 import React, { Component } from 'react';
 
+//REDUX
+import { connect } from 'react-redux';
 
 //COMPONENTS
 import Navigation from './components/navigation/navigation.component';// This is the navigation bar where you can select to sign in, sign out and register.
@@ -23,6 +27,9 @@ import coinImg from './assets/coin-image/coin.png';
 
 //style
 import './App.css';
+
+//ACTIONS:
+import { setSearchField } from './actions';
 
 const initialState = {
   searchField: '',//This searchField is used for the SearchBox component to search
@@ -177,4 +184,5 @@ class App extends Component {
 
 }
 
-export default App;
+//connected App component to subscribe to any state changes in the redux store:
+export default connect(mapStateToProps, mapDispatchToProps)(App);//connect is a higher order function (a function that returns another function)
