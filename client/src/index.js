@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider, connect } from 'react-redux';//They allow us to connect the 2 parts of our app (react with redux)
+import { Provider } from 'react-redux';//It allows us to provide our App with redux and pass down the store to our App
 import { createStore } from 'redux';//It allows us to create a store (javascript object that describes our app)
 import './index.css';
 import App from './App';

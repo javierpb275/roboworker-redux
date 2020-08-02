@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 
 //REDUX
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'; //It allows us to connect the 2 parts of our app (react with redux)
 
 //COMPONENTS
 import Navigation from './components/navigation/navigation.component';// This is the navigation bar where you can select to sign in, sign out and register.
