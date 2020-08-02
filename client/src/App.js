@@ -48,7 +48,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const initialState = {
-  searchField: '',//This searchField is used for the SearchBox component to search
   route: 'signin',//This route state takes care of changing from one page to another. The default page will be the SignIn component.
   isSignedIn: false,// isSignedIn checks if the user is signed in 
   user: {
@@ -148,10 +147,6 @@ class App extends Component {
 
   };
 
-  //This function takes care of getting what the user types in the SearchBox and change the state of searchField
-  handleChange = (e) => {
-    this.setState({ searchField: e.target.value })
-  }
 
   //This function is used to change the route
   onRouteChange = (route) => {
@@ -170,7 +165,8 @@ class App extends Component {
 
 
   render() {
-    const { user, isSignedIn, searchField } = this.state;
+    const { user, isSignedIn } = this.state;
+    const { searchField, handleChange } = this.props;
     //We filter the products so that we can use our SearchBox component to search for different products
     const filteredProducts = products.filter(product =>
       product.name.toLowerCase().includes(searchField.toLowerCase()));
@@ -183,7 +179,7 @@ class App extends Component {
             <Card id={user.id} name={user.name} email={user.email} coins={user.coins} coinIcon={coinImg} />
             <CustomButton handleClick={this.onClickEarnCoins} icon={nailerImg} title='Work' />
             <CustomIcon icon={storeImg} title='$TORE' />
-            <SearchBox placeholder='Search Product' handleChange={this.handleChange} />
+            <SearchBox placeholder='Search Product' handleChange={handleChange} />
             <Scroll>
               <ProductsList coinIcon={coinImg} products={filteredProducts} handleClick={this.onClickSpendCoins} />
             </Scroll>
