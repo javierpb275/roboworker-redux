@@ -31,6 +31,14 @@ import './App.css';
 //ACTIONS:
 import { setSearchField } from './actions';
 
+//The searchField that we return is gonna be use as props by the App component and is gonna come from the  
+//state.searchProduct.searchField which comes from our reducer because in index.js we created the store with searchProduct reducer
+const mapStateToProps = state => {
+  return {
+    searchField: state.searchProduct.searchField
+  }
+}
+
 const initialState = {
   searchField: '',//This searchField is used for the SearchBox component to search
   route: 'signin',//This route state takes care of changing from one page to another. The default page will be the SignIn component.
