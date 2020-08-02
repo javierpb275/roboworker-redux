@@ -39,6 +39,14 @@ const mapStateToProps = state => {
   }
 }
 
+//dispatch is what triggers the action (object that we created). In order to send the action we need dispatch so it gets
+//dispatched into the reducer. This dispatch can be used to send actions
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleChange: (event) => dispatch(setSearchField(event.target.value))
+  }
+}
+
 const initialState = {
   searchField: '',//This searchField is used for the SearchBox component to search
   route: 'signin',//This route state takes care of changing from one page to another. The default page will be the SignIn component.
