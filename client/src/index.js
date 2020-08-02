@@ -5,12 +5,17 @@ import { createStore } from 'redux';//It allows us to create a store (javascript
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { searchProduct } from './reducers';
 
+//const store = createStore(rootReducer);//rootReducer: reducer of our app where we combine all our reducers (createStore(): This is the way we create a store[state])
 
+const store = createStore(searchProduct);//since we only have one reducer for now we just add searchProduct reducer
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
