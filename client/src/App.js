@@ -35,7 +35,7 @@ import { setSearchField } from './actions';
 //state.searchProduct.searchField which comes from our reducer because in index.js we created the store with searchProduct reducer
 const mapStateToProps = state => {
   return {
-    searchField: state.searchProduct.searchField
+    searchField: state.searchField
   }
 }
 
